@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module primer_tema {
-}
