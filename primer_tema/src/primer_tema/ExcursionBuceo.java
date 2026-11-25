@@ -1,13 +1,13 @@
 package primer_tema;
 
 public class ExcursionBuceo extends Excursion{
+	
 	private boolean certificado;
 	private double profundidadmax;
 	private boolean alquiler;
 	
 	public ExcursionBuceo(String codigo, Destino estado, int num_part, int distancia, int duracionexcur,
-			boolean certificado, double profundidadmax, boolean alquiler) 
-	{
+			boolean certificado, double profundidadmax, boolean alquiler) {
 		super(codigo, estado, num_part, distancia, duracionexcur);
 		this.certificado = certificado;
 		this.profundidadmax = profundidadmax;
@@ -38,12 +38,19 @@ public class ExcursionBuceo extends Excursion{
 	public void setAlquiler(boolean alquiler) {
 		this.alquiler = alquiler;
 		
-	}
+	}	
 
 	@Override
 	public String toString() {
 		return super.toString()+ "\nExcursionBuceo [certificado=" + certificado + ", profundidadmax=" + profundidadmax + ", alquiler="
 				+ alquiler + "]";
-	
+	}
+	public double calularPrecio() {
+		if(alquiler==true) {
+		return super.calcularPrecio()+getNum_part()*100;
+		}
+		else {
+			return super.calcularPrecio();
+		}
 	}
 }

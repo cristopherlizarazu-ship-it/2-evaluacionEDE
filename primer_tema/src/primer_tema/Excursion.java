@@ -3,14 +3,13 @@ package primer_tema;
 public class Excursion {
 
 	private String codigo;
-	private ExcursionBuceo estado;
+	private Destino estado;
 	private int num_part;
 	private int distancia;
 	private int duracionexcur;
 	
 	
-	public excursion(String codigo, ExcursionBuceo estado, int num_part, int distancia, int duracionexcur) {
-		super();
+	public Excursion(String codigo, Destino estado, int num_part, int distancia, int duracionexcur) {
 		this.codigo = codigo;
 		this.estado = estado;
 		this.num_part = num_part;
@@ -29,12 +28,12 @@ public class Excursion {
 	}
 
 
-	public ExcursionBuceo getEstado() {
+	public Destino getEstado() {
 		return estado;
 	}
 
 
-	public void setEstado(ExcursionBuceo estado) {
+	public void setEstado(Destino estado) {
 		this.estado = estado;
 	}
 
@@ -82,6 +81,9 @@ public class Excursion {
 	public int obtenerVelocidadMedia() {
 		return distancia / duracionexcur;
 		
+	}
+	public double calcularPrecio () {
+		return num_part*50;
 	}
 	
 }
